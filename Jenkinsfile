@@ -1,22 +1,5 @@
-pipeline {
-    agent any
-
-    stages {
-        stage('Build') {
-            steps {
-                echo "${env.Workspace}"
-                echo 'Building1..'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
+node('10.10.4.218'){
+    stage("Make"){
+        sh "set -eo pipefail;make"
     }
 }
