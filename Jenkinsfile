@@ -1,4 +1,4 @@
-node('10.10.4.218'){
+node('master'){
     stage("Make"){
         sh "set -eo pipefail;make"
     }
